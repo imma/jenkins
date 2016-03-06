@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+function bootstrap {
+  local shome="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
+  source "$shome/script/profile"
+
+  local ver_jenkins='1.642.2'
+  local url_jenkins="http://mirrors.jenkins-ci.org/war-stable/${ver_jenkins}/jenkins.war"
+  local fnm_jenkins="jenkins-${ver_jenkins}.war"
+
+  cache curl "$fnm_jenkins" "$url_jenkins"
+
+  mkdir -p "$shome/vendor/jenkins-${ver_jenkins}"
+  rsync -ia "${BASEBOX_CACHE}/curl/$fnm_jenkins" "$shome/vendor/jenkins-${ver_jenkins}/jenkins.war"
+  ln -nfs "jenkins-${ver_jenkins}/jenkins.war" "$shome/vendor/jenkins.war"
+}
+
+bootstrap
