@@ -13,6 +13,8 @@ function bootstrap {
   mkdir -p "$shome/vendor/jenkins-${ver_jenkins}"
   rsync -ia "${BASEBOX_CACHE}/curl/$fnm_jenkins" "$shome/vendor/jenkins-${ver_jenkins}/jenkins.war"
   ln -nfs "jenkins-${ver_jenkins}/jenkins.war" "$shome/vendor/jenkins.war"
+
+  "$shome/script/update"
 }
 
 bootstrap
