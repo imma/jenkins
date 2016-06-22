@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+function version {
+  local shome="${_jenkins_home:-"$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
+  source "$shome/script/profile"
+
+  local ver_jenkins="$(java -jar "$shome/vendor/jenkins.war" --version 2>&- || true)"
+  jq -n --arg jenkins "$ver_jenkins" '{jenkins: $jenkins}'
+}
+
+version "$@"
