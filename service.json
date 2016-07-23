@@ -1,9 +1,0 @@
-{
-  "services": {
-    "jenkins": {
-      "run": "~/work/jenkins/script/server",
-      "env": {
-      }
-    }
-  }
-}
