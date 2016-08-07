@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-function profile {
+function _jenkins_profile {
   local shome="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
   PATH="$shome/bin:$PATH"
 }
 
-profile
+_jenkins_profile
