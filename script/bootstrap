@@ -4,7 +4,7 @@ function bootstrap {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  local ver_jenkins='2.10'
+  local ver_jenkins='2.23'
   local url_jenkins="http://mirrors.jenkins-ci.org/war/${ver_jenkins}/jenkins.war"
   local fnm_jenkins="jenkins-${ver_jenkins}.war"
 
