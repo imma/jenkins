@@ -4,7 +4,7 @@ function version {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  local ver_jenkins="$(java -jar "$shome/vendor/jenkins.war" --version 2>/dev/null | tail -1 || true)"
+  local ver_jenkins="$(java -jar "$shome/vendor/jenkins/jenkins.war" --version 2>/dev/null | tail -1 || true)"
   jq -n --arg jenkins "$ver_jenkins" '{jenkins: $jenkins}'
 }
 
