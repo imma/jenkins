@@ -4,7 +4,7 @@ function _jenkins_profile {
   local shome="${_jenkins_home:-"$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
   PATH="$shome/bin:$PATH"
 
-  JENKINS_VERSION='2.60.1'
+  JENKINS_VERSION='2.60.2'
 }
 
 _jenkins_profile
