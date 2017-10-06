@@ -2,7 +2,7 @@
 
 function _jenkins_profile {
   local shome="${_jenkins_home:="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
-  PATH="$shome/bin:$PATH"
+  PATH="$shome/bin:$shome/exec:$PATH"
 }
 
 _jenkins_profile
