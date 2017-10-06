@@ -4,6 +4,8 @@ function jenkins_server {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
+  export JENKINS_ARGS="--prefix=/jenkins"
+
   if [[ "$#" == 0 ]]; then
     set -- default
   fi
