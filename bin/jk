@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+function main {
+  local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
+  source "${BLOCK_PATH:-"$shome/work"}/block/script/profile" ~
+  source normalize  
+
+  exec java -jar "${BOARD_PATH}/.jenkins/war/WEB-INF/jenkins-cli.jar" -s http://localhost/jenkins -http -auth @"${BOARD_PATH}/.jenkins/secrets/initialAdminPassword" "$@"
+}
+
+source sub "$BASH_SOURCE" "$@"
