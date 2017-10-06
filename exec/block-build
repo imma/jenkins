@@ -5,7 +5,7 @@ function main {
   source "$shome/script/profile"
   source normalize
 
-  local nm_block="_$(cat .repo-name)_home"
+  local nm_block="_$(cat .repo-name | cut -d/ -f2)_home"
   jk build -f -v -s -p block="${!nm_block}" "$@"
 }
 
