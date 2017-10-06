@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+function main {
+  local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
+  source "$shome/script/profile"
+  source normalize
+
+  local nm_block="_$(cat .repo-name)_home"
+  jk build -f -v -s -p block="${!nm_block}" "$@"
+}
+
+source sub "$0" "$@"
