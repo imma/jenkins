@@ -11,7 +11,7 @@ function jenkins_server {
   case "${1:-}" in
     default)
       shift
-      exec java -jar "$shome/vendor/jenkins.war" "$@"
+      exec java -jar "$shome/vendor/jenkins/jenkins.war" "$@"
       ;;
     *)
       echo "ERROR: unknown server command: ${1:-/not-supplied/}" 1>&2
