@@ -1,6 +1,7 @@
 {
   "require": [
-    "curl", 
+    "curl",
     "java"
-  ]
+  ],
+  "versions": {}
 }
