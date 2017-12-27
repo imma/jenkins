@@ -3,5 +3,7 @@
     "curl",
     "java"
   ],
-  "versions": {}
+  "versions": {
+    "jenkins": "jenkinsci/jenkins/jenkins-"
+  }
 }
