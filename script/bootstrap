@@ -4,7 +4,7 @@ function bootstrap {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  local url_jenkins="http://mirrors.jenkins.io/war/${JENKINS_VERSION}/jenkins.war"
+  local url_jenkins="http://mirrors.jenkins.io/war-stable/${JENKINS_VERSION}/jenkins.war"
   local fnm_jenkins="jenkins-${JENKINS_VERSION}.war"
 
   cache curl "$fnm_jenkins" "$url_jenkins"
